@@ -1,11 +1,12 @@
 /* General Styles */
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Arial', sans-serif;
   line-height: 1.6;
   margin: 0;
   padding: 0;
-  background-color: #f4f4f4;
+  background-color: #f9f9f9;
   color: #333;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .container {
@@ -17,176 +18,219 @@ body {
 
 /* Header Styles */
 header {
-  background-color: #333;
+  background-color: #2c3e50;
   color: #fff;
-  padding: 20px 0;
+  padding: 30px 0;
   text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 header h1 {
   margin: 0;
+  font-size: 2.5rem;
+  font-weight: bold;
+  letter-spacing: 1px;
 }
 
 nav ul {
   list-style: none;
   padding: 0;
-  margin: 10px 0 0;
+  margin: 15px 0 0;
 }
 
 nav ul li {
   display: inline;
-  margin: 0 10px;
+  margin: 0 15px;
 }
 
 nav ul li a {
   color: #fff;
   text-decoration: none;
+  font-size: 1.1rem;
+  transition: color 0.3s ease;
 }
 
 nav ul li a:hover {
-  text-decoration: underline;
+  color: #1abc9c;
+  text-decoration: none;
 }
 
 /* Blog Posts Styles */
 .blog-posts {
-  margin: 20px 0;
+  margin: 30px 0;
 }
 
 .post {
   background-color: #fff;
-  padding: 20px;
-  margin-bottom: 20px;
-  border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 25px;
+  margin-bottom: 25px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.post:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
 .post h2 {
   margin-top: 0;
+  font-size: 1.8rem;
+  color: #2c3e50;
 }
 
 .post p {
-  margin: 10px 0;
+  margin: 15px 0;
+  color: #555;
+  line-height: 1.8;
 }
 
 .read-more {
   display: inline-block;
-  padding: 10px 15px;
-  background-color: #333;
+  padding: 10px 20px;
+  background-color: #2c3e50;
   color: #fff;
   text-decoration: none;
   border-radius: 5px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .read-more:hover {
-  background-color: #555;
+  background-color: #1abc9c;
+  transform: translateY(-2px);
 }
 
 /* Add Post Form Styles */
 .add-post-form {
   background-color: #fff;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  margin-bottom: 20px;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
 }
 
 .add-post-form h2 {
   margin-top: 0;
-  font-size: 24px;
-  color: #333;
+  font-size: 2rem;
+  color: #2c3e50;
 }
 
 .form-group {
-  margin-bottom: 15px;
+  margin-bottom: 20px;
 }
 
 .form-group label {
   display: block;
   font-weight: bold;
-  margin-bottom: 5px;
+  margin-bottom: 8px;
   color: #555;
 }
 
 .form-group input,
 .form-group textarea {
   width: 100%;
-  padding: 10px;
+  padding: 12px;
   border: 1px solid #ddd;
   border-radius: 5px;
-  font-size: 16px;
+  font-size: 1rem;
   box-sizing: border-box;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: #1abc9c;
+  box-shadow: 0 0 8px rgba(26, 188, 156, 0.3);
 }
 
 .form-group textarea {
   resize: vertical;
-  min-height: 100px;
+  min-height: 120px;
 }
 
 .submit-btn {
   display: inline-block;
-  padding: 10px 20px;
-  background-color: #333;
+  padding: 12px 25px;
+  background-color: #2c3e50;
   color: #fff;
   border: none;
   border-radius: 5px;
-  font-size: 16px;
+  font-size: 1rem;
   cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .submit-btn:hover {
-  background-color: #555;
+  background-color: #1abc9c;
+  transform: translateY(-2px);
 }
 
 /* Footer Styles */
 footer {
-  background-color: #333;
+  background-color: #2c3e50;
   color: #fff;
   text-align: center;
-  padding: 10px 0;
-  margin-top: 20px;
+  padding: 20px 0;
+  margin-top: 40px;
+  box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
 }
 
 footer p {
   margin: 0;
+  font-size: 0.9rem;
 }
+
 /* Comments Section */
 .comments-section {
-  margin-top: 20px;
-  padding: 15px;
+  margin-top: 25px;
+  padding: 20px;
   background-color: #f9f9f9;
-  border-radius: 5px;
-  border: 1px solid #ddd;
+  border-radius: 10px;
+  border: 1px solid #eee;
+  transition: box-shadow 0.3s ease;
+}
+
+.comments-section:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .comments-section h3 {
   margin-top: 0;
-  font-size: 20px;
-  color: #333;
+  font-size: 1.5rem;
+  color: #2c3e50;
 }
 
 .comments-list {
-  margin-bottom: 15px;
+  margin-bottom: 20px;
 }
 
 .comment {
-  padding: 10px;
-  margin-bottom: 10px;
+  padding: 15px;
+  margin-bottom: 15px;
   background-color: #fff;
-  border-radius: 5px;
+  border-radius: 8px;
   border: 1px solid #eee;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.comment:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .comment p {
-  margin: 5px 0;
+  margin: 8px 0;
+  color: #555;
 }
 
 .comment .author {
   font-weight: bold;
-  color: #333;
+  color: #2c3e50;
 }
 
 .comment .date {
-  font-size: 12px;
+  font-size: 0.9rem;
   color: #777;
 }
 
@@ -197,28 +241,37 @@ footer p {
 
 .add-comment-form input,
 .add-comment-form textarea {
-  margin-bottom: 10px;
-  padding: 10px;
+  margin-bottom: 15px;
+  padding: 12px;
   border: 1px solid #ddd;
   border-radius: 5px;
-  font-size: 16px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.add-comment-form input:focus,
+.add-comment-form textarea:focus {
+  border-color: #1abc9c;
+  box-shadow: 0 0 8px rgba(26, 188, 156, 0.3);
 }
 
 .add-comment-form textarea {
   resize: vertical;
-  min-height: 100px;
+  min-height: 120px;
 }
 
 .submit-comment-btn {
-  padding: 10px 15px;
-  background-color: #333;
+  padding: 12px 20px;
+  background-color: #2c3e50;
   color: #fff;
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  font-size: 16px;
+  font-size: 1rem;
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .submit-comment-btn:hover {
-  background-color: #555;
+  background-color: #1abc9c;
+  transform: translateY(-2px);
 }

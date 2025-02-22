@@ -8,12 +8,36 @@ document.addEventListener('DOMContentLoaded', () => {
         // Create HTML for each post
         const postElement = document.createElement('article');
         postElement.classList.add('post');
+        postElement.setAttribute('data-post-id', post.id); // Add data-post-id attribute
         postElement.innerHTML = `
           <h2>${post.title}</h2>
           <p>${post.content}</p>
           <p><strong>By ${post.author}</strong> on ${new Date(post.date).toLocaleDateString()}</p>
+          <!-- Comments Section -->
+          <div class="comments-section">
+            <h3>Comments</h3>
+            <div class="comments-list" id="comments-${post.id}">
+              <!-- Comments will be inserted here by JavaScript -->
+            </div>
+            <form class="add-comment-form" data-post-id="${post.id}">
+              <input type="text" class="comment-author" placeholder="Your Name" required>
+              <textarea class="comment-content" placeholder="Your Comment" required></textarea>
+              <button type="submit" class="submit-comment-btn">Add Comment</button>
+            </form>
+          </div>
         `;
         blogPosts.appendChild(postElement); // Add the post to the page
+      });
+
+      // Add event listeners to comment forms after posts are rendered
+      const commentForms = document.querySelectorAll('.add-comment-form');
+      commentForms.forEach((form) => {
+        form.addEventListener('submit', handleCommentSubmit);
+      });
+
+      // Fetch comments for each post after posts are rendered
+      posts.forEach((post) => {
+        fetchComments(post.id);
       });
     })
     .catch((error) => console.error('Error fetching posts:', error)); // Handle errors
@@ -39,6 +63,7 @@ document.getElementById('add-post-form').addEventListener('submit', (e) => {
     })
     .catch((error) => console.error('Error adding post:', error));
 });
+
 // Function to fetch and display comments for a post
 function fetchComments(postId) {
   fetch(`http://localhost:3000/api/comments/${postId}`)
@@ -80,18 +105,3 @@ function handleCommentSubmit(event) {
     })
     .catch((error) => console.error('Error adding comment:', error));
 }
-
-// Add event listeners to comment forms
-document.addEventListener('DOMContentLoaded', () => {
-  const commentForms = document.querySelectorAll('.add-comment-form');
-  commentForms.forEach((form) => {
-    form.addEventListener('submit', handleCommentSubmit);
-  });
-
-  // Fetch comments for each post
-  const posts = document.querySelectorAll('.post');
-  posts.forEach((post) => {
-    const postId = post.dataset.postId;
-    fetchComments(postId);
-  });
-});
